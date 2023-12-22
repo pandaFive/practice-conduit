@@ -1,0 +1,26 @@
+<li id="article-<%= article.id %>">
+  <%= link_to image_tag(author.image, size), model %>
+
+<div id="article-<%= article.id %>", class="article-preview" >
+  <div class="article-meta">
+    <%= link_to image_tag(author.image, alt: "man icon"), "/" %>
+    <div class="info">
+      <%= link_to author.name, "#" %>
+      <span class="date">January 20th</span>
+    </div>
+    <button class="btn btn-outline-primary btn-sm pull-xs-right">
+      <i class="ion-heart"></i> 29
+    </button>
+  </div>
+  <%= link_to "#" class: "preview-link" do %>
+  <a href="/article/how-to-build-webapps-that-scale" class="preview-link">
+    <h1>How to build webapps that scale</h1>
+    <p>This is the description for the post.</p>
+    <span>Read more...</span>
+    <ul class="tag-list">
+      <li class="tag-default tag-pill tag-outline">realworld</li>
+      <li class="tag-default tag-pill tag-outline">implementations</li>
+    </ul>
+  </a>
+  <% end %>
+</div>

@@ -1,17 +1,35 @@
 <nav class="navbar navbar-light">
   <div class="container">
-    <%= link_to "conduit", "#", class: "navbar-brand"%>
+    <%= link_to "conduit", root_path, class: "navbar-brand"%>
     <ul class="nav navbar-nav pull-xs-right">
       <li class="nav-item">
         <!-- Add "active" class when you're on that page" -->
-        <%= link_to "Home", "#", class: "nav-link active" %>
+        <%= link_to "Home", root_path, class: "nav-link active" %>
       </li>
-      <li class="nav-item">
-        <%= link_to "Sign in", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Sign up", "#", class: "nav-link" %>
-      </li>
+      <% if true %>
+        <li class="nav-item">
+          <%= link_to new_article_path, class: "nav-link" do %>
+            <i class="ion-compose"></i>&nbsp;New Article
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to new_article_path, class: "nav-link" do %>
+            <i class="ion-gear-a"></i>&nbsp;Settings
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "/", class: "nav-link" do %>
+            <%= image_tag "Qr71crq.jpg", class: "user-pic" %>Eric Simons
+          <% end %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Sign in", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", signup_path, class: "nav-link" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>

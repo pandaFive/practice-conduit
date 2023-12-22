@@ -1,0 +1,21 @@
+<div class="editor-page">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-xs-12">
+
+        <%= form_with(model: @article) do |f| %>
+          <%= f.label :title %>
+          <%= f.text_field :title, class: "form-control form-control-lg", placeholder: "Article Title" %>
+
+          <%= f.label :description %>
+          <%= f.text_field :description, class: "form-control form-control-lg", placeholder: "What's this article about?" %>
+
+          <%= f.label :content %>
+          <%= f.text_field :content, class: "form-control form-control-lg", placeholder: "Write your article (in markdown)" %>
+
+          <%= f.submit "Publish Article", class: "btn btn-lg pull-xs-right btn-primary mt-2"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
