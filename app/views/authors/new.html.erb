@@ -1,0 +1,23 @@
+<div class="editor-page">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-xs-12">
+        <%= form_with(model: @author) do |f| %>
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control", placeholder: "name" %>
+
+          <%= f.label :email %>
+          <%= f.text_field :email, class: "form-control", placeholder: "email" %>
+
+          <%= f.label :password %>
+          <%= f.text_field :password, class: "form-control", placeholder: "password" %>
+
+          <%= f.label :password_confirmation %>
+          <%= f.text_field :password_confirmation, class: "form-control", placeholder: "password" %>
+
+          <%= f.submit "Submit", class: "btn btn-primary pull-xs-right mt-2" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
