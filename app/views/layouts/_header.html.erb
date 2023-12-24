@@ -22,7 +22,8 @@
         </li>
         <li class="nav-item">
           <%= link_to current_author, class: "nav-link" do %>
-            <%= image_tag "Qr71crq.jpg", class: "user-pic" %>Eric Simons
+            <%= image_tag "demo-avatar.png", class: "user-pic" %>
+            <%= current_author.name %>
           <% end %>
         </li>
       <% else %>

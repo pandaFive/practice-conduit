@@ -15,8 +15,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    # @article = Article.find(params[:id])
-    # @author = Author.find(id: @article.author_id)
+    @article = Article.find(params[:id])
+    @author = Author.find(@article.author_id)
   end
 
   private

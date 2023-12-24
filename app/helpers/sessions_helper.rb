@@ -10,6 +10,10 @@ module SessionsHelper
     end
   end
 
+  def current_author?(author)
+    author && author == current_author
+  end
+
   def logged_in?
     !current_author.nil?
   end
