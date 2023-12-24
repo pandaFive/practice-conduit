@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article created!"
       redirect_to root_url
     else
-      @feed_item = current_user.feed.paginate(page: params[:page])
+      @feed_item = current_author.feed.paginate(page: params[:page])
       render "static_pages/home", status: :unprocessable_entity
     end
   end
