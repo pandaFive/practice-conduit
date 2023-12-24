@@ -4,6 +4,8 @@ class AuthorsController < ApplicationController
 
   def show
     @author = Author.find(params[:id])
+    @articles = @author.articles.paginate(page: params[:page], per_page: 10)
+    @custom_renderer = CustomLinkRenderer.new
   end
 
   def new
