@@ -11,9 +11,11 @@
       <div class="col-md-9">
         <div class="feed-toggle">
           <ul class="nav nav-pills outline-active">
+            <% if logged_in? %>
             <li class="nav-item">
               <%= link_to "Your Feed", "/", class: "nav-link" %>
             </li>
+            <% end %>
             <li class="nav-item">
               <%= link_to "Global Feed", "/", class: "nav-link active" %>
             </li>
