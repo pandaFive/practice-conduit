@@ -11,7 +11,7 @@
           <%= f.text_field :description, class: "form-control form-control-lg", placeholder: "What's this article about?" %>
 
           <%= f.label :content %>
-          <%= f.text_field :content, class: "form-control form-control-lg", placeholder: "Write your article (in markdown)" %>
+          <%= f.text_area :content, rows: "10", class: "form-control form-control-lg", placeholder: "Write your article (in markdown)" %>
 
           <%= f.submit "Publish Article", class: "btn btn-lg pull-xs-right btn-primary mt-2"%>
         <% end %>

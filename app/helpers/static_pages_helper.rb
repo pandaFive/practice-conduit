@@ -21,4 +21,8 @@ class CustomLinkRenderer < WillPaginate::ActionView::LinkRenderer
       tag(:li, tag(:span, text, class: 'page-link'), class: "page-item #{classname} disabled")
     end
   end
+
+  def gap
+    tag(:li, tag(:span, '...'), class: 'page-item disabled gap display-none')
+  end
 end

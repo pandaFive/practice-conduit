@@ -37,7 +37,7 @@
           <%= @article.description %>
         </p>
         <div>
-          <%= @article.content %>
+          <%= @article.content.html_safe %>
         </div>
         <ul class="tag-list">
           <li class="tag-default tag-pill tag-outline">realworld</li>
