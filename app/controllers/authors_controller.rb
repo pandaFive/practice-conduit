@@ -1,4 +1,11 @@
 class AuthorsController < ApplicationController
+  def edit
+  end
+
+  def show
+    @author = Author.find(params[:id])
+  end
+
   def new
     @author = Author.new
   end
@@ -6,7 +13,9 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new(author_params)
     if @author.save
-      flash[:info] = "ユーザー登録しました。"
+      reset_session
+      log_in @author
+      flash[:success] = "ユーザー登録しました。"
       redirect_to root_url
     else
       render "new", status: :unprocessable_entity
@@ -15,6 +24,6 @@ class AuthorsController < ApplicationController
 
   private
     def author_params
-      params.require(:author).permit(:name, :email, :password, :password_confirmation)
+      params.require(:author).permit(:name, :email, :password)
     end
 end

@@ -6,25 +6,28 @@
         <!-- Add "active" class when you're on that page" -->
         <%= link_to "Home", root_path, class: "nav-link active" %>
       </li>
-      <% if true %>
+      <% if logged_in? %>
         <li class="nav-item">
           <%= link_to new_article_path, class: "nav-link" do %>
             <i class="ion-compose"></i>&nbsp;New Article
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to new_article_path, class: "nav-link" do %>
+          <%= link_to settings_path, class: "nav-link" do %>
             <i class="ion-gear-a"></i>&nbsp;Settings
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "/", class: "nav-link" do %>
+          <%= link_to "Sign out", logout_path, class: "nav-link", data: { "turbo-method": :delete } %>
+        </li>
+        <li class="nav-item">
+          <%= link_to current_author, class: "nav-link" do %>
             <%= image_tag "Qr71crq.jpg", class: "user-pic" %>Eric Simons
           <% end %>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Sign in", "#", class: "nav-link" %>
+          <%= link_to "Sign in", login_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Sign up", signup_path, class: "nav-link" %>
