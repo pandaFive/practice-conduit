@@ -8,14 +8,16 @@
         </p>
 
         <%= form_with(model: @author) do |f| %>
+          <%= render "shared/error_messages" %>
+
           <%= f.label :name %>
           <%= f.text_field :name, class: "form-control form-control-lg", placeholder: "Username"%>
 
           <%= f.label :email %>
-          <%= f.label :email, class: "form-control form-control-lg", placeholder: "Email"%>
+          <%= f.email_field :email, class: "form-control form-control-lg", placeholder: "Email"%>
 
           <%= f.label :password %>
-          <%= f.label :password, class: "form-control form-control-lg", placeholder: "Password"%>
+          <%= f.password_field :password, class: "form-control form-control-lg", placeholder: "Password"%>
 
           <%= f.submit "Sign up", class: "btn btn-lg btn-primary pull-xs-right" %>
         <% end %>

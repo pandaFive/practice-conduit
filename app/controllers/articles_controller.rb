@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = current_user.articles.build(article_params)
+    @article = current_author.articles.build(article_params)
     if @article.save
       flash[:success] = "Article created!"
       redirect_to root_url
@@ -15,8 +15,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
-    @author = Author.find(id: @article.author_id)
+    # @article = Article.find(params[:id])
+    # @author = Author.find(id: @article.author_id)
   end
 
   private
