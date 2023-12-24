@@ -9,3 +9,12 @@
 .display-none {
   display: none;
 }
+
+// タブの中身、最初は非表示
+.tabbox {
+  display: none;
+}
+// box-showクラスのものだけ表示
+.box-show {
+  display: block;
+}

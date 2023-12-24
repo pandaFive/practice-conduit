@@ -3,7 +3,7 @@
     <%= link_to image_tag("demo-avatar.png", alt: "man icon"), article.author %>
     <div class="info">
       <%= link_to article.author.name, article.author, class: "author" %>
-      <span class="date">January 20th</span>
+      <span class="date"><%= formatted_created_at(article) %></span>
     </div>
     <button class="btn btn-outline-primary btn-sm pull-xs-right">
       <i class="ion-heart"></i> 29
